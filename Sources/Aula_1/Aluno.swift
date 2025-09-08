@@ -1,3 +1,5 @@
+import Foundation
+
 class Aluno: Pessoa {
 
     private var matricula: String
