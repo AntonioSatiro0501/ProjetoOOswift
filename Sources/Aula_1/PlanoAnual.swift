@@ -1,14 +1,9 @@
-import Foundation
-
-class PlanoAnual: Plano{
-
+class PlanoAnual: Plano {
     init(){
-
-        self.nome = "Plano Anual (Promocional)"
+        super.init(nome: "Plano Anual (Promocional)")
     }
 
     override func calcularMensalidade() -> Double{
-
-        return (120.00*0.8)
-    }
+        return 0.8*120.0
+    }   
 }
