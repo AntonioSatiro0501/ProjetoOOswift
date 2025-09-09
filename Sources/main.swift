@@ -2,7 +2,6 @@
 // https://docs.swift.org/swift-book
 
 import Foundation
-import Aula_1
 
 let p1: PlanoAnual = PlanoAnual()
 

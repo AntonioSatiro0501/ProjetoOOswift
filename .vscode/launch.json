@@ -89,6 +89,24 @@
             "name": "Release Aula_1",
             "program": "${workspaceFolder:ProjetoOOswift}/.build/release/Aula_1",
             "preLaunchTask": "swift: Build Release Aula_1"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:ProjetoOOswift}",
+            "name": "Debug Projeto",
+            "program": "${workspaceFolder:ProjetoOOswift}/.build/debug/Projeto",
+            "preLaunchTask": "swift: Build Debug Projeto"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:ProjetoOOswift}",
+            "name": "Release Projeto",
+            "program": "${workspaceFolder:ProjetoOOswift}/.build/release/Projeto",
+            "preLaunchTask": "swift: Build Release Projeto"
         }
     ]
 }
