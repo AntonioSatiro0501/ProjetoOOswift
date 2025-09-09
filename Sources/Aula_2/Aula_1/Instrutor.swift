@@ -1,5 +1,5 @@
 public class Instrutor: Pessoa {
-    var especialidade: String
+    private var especialidade: String
 
     init(nome: String, email: String, especialidade: String) {
         self.especialidade = especialidade

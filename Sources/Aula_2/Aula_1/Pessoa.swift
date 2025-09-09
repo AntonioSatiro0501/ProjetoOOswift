@@ -1,5 +1,5 @@
 public class Pessoa {
-    private var nome: String
+    public let nome: String
     private var email: String
 
     init(nome: String, email: String){

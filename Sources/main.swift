@@ -1,7 +1,9 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
-var nome = "Seu Nome"
-let sobrenome = "Seu Sobrenome"
+import Foundation
+import Aula_1
 
-print("Bem-vindo(a), \(nome) \(sobrenome)!")
+let p1: PlanoAnual = PlanoAnual()
+
+let aluno: Aluno = Aluno(nome: "Pedro", email:"pedro@gmail.com", matricula: "6 meses", plano: p1)

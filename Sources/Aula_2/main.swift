@@ -1,3 +1,6 @@
 import Foundation
 
-print("Aula 2 de Swift!!")
+
+let p1: PlanoAnual = PlanoAnual()
+
+let aluno: Aluno = Aluno(nome: "Pedro", email:"pedro@gmail.com", matricula: "6 meses", plano: p1)
