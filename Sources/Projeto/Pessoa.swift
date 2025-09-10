@@ -1,6 +1,7 @@
 public class Pessoa {
-    private let nome: String
-    private var email: String
+    // nome foi escolhido como public devido à impossibilidade de estabelecer nome como private(set) enquanto let
+    public let nome: String
+    private(set) var email: String
 
     init(nome: String, email: String){
         self.nome = nome
