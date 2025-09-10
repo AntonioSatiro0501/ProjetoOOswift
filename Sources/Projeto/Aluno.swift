@@ -2,7 +2,7 @@ import Foundation
 
 public class Aluno: Pessoa {
 
-    private var matricula: String
+    private let matricula: String
     private var nivel: NivelAluno
     private(set) var plano: Plano
 
@@ -16,7 +16,7 @@ public class Aluno: Pessoa {
 
     func getMatricula() -> String{
 
-        return matricula
+        return self.matricula
     }
 
     override func getDescricao () -> String{

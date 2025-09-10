@@ -1,6 +1,7 @@
 class Aparelho: Manutencao{
      internal let nomeItem: String
-     private(set) var dataUltimaManutencao: String
+     internal var dataUltimaManutencao: String
+     
      func realizarManutencao() -> Bool{
          print("Realizando manutenção do aparelho \(nomeItem)!")
          return true

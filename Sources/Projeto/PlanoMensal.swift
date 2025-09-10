@@ -1,4 +1,4 @@
-public class PlanoMensal: Plano {
+class PlanoMensal: Plano {
     init(){
         super.init(nome: "Plano Mensal")
     }

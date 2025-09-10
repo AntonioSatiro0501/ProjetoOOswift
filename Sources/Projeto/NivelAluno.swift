@@ -1,6 +1,4 @@
-import Foundation
-
-public enum NivelAluno {
+enum NivelAluno {
     case iniciante
     case intermediario
     case avancado
