@@ -1,12 +1,20 @@
 class Academia {
     private let nome: String
-    private var alunosMatriculos: [String: Aluno]
+    private var alunosMatriculados: [String: Aluno]
     private var instrutoresContratados: [String: Instrutor]
     private var aparelhos: [Aparelho]
     private var aulasDisponiveis: [Aula]
 
-    public func adicionarAparelho(_ aula: Aula){
+    init(nome: String, alunosMatriculados: [String: Aluno], instrutoresContratados: [String: Instrutor],
+    aparelhos:[Aparelho], aulasDisponiveis: [Aula]){
+        self.nome = nome
+        self.alunosMatriculados = alunosMatriculados
+        self.instrutoresContratados = instrutoresContratados
+        self.aparelhos = aparelhos
+        self.aulasDisponiveis = aulasDisponiveis
+    }
 
+    public func adicionarAparelho(_ aula: Aula){
         aulasDisponiveis.append(aula)
     }
 
@@ -22,9 +30,37 @@ class Academia {
 
     public func matricularAluno(_ aluno: Aluno){
         let matricula = aluno.getMatricula()
-        if(alunosMatriculos[matricula] != nil){
-
+        if(alunosMatriculados[matricula] != nil){
+            alunosMatriculados[matricula] = aluno
+            print("Aluno adicionado com sucesso!")
+        } else {
+            // Poderíamos lançar uma exceção aqui!
+            print("Erro: Aluno com matrícula \(matricula) já existe.")
         }
+    }
+
+    public func matricularAluno(nome: String, email: String, matricula: String, plano: Plano) -> Aluno {
+        let novoAluno = Aluno(nome: nome, email: email, matricula: matricula, plano: plano)
+        matricularAluno(novoAluno)
+        return novoAluno
+    }
+
+    public func buscarAluno(porMatricula matricula: String) -> Aluno? {
+        return alunosMatriculados[matricula]
+    }
+
+    public func listarAlunos() {
+        if(alunosMatriculados.count == 0){
+            print("Nenhum aluno matriculado.")
+            return
+        }
+
+        print("--- Lista de Alunos Matriculados ---")
+        // Dá certo isso daqui??
+        for aluno in alunosMatriculados.values.sorted { (a1: Aluno, a2: Aluno) -> Bool in a1.nome > a2.nome} {
+            print(aluno.getDescricao())
+        }
+        print("------------------------------------")
     }
 
     public func listarAulas(){

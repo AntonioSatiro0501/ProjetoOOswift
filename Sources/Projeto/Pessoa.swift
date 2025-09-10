@@ -1,5 +1,6 @@
 public class Pessoa {
-    // nome foi escolhido como public devido à impossibilidade de estabelecer nome como private(set) enquanto let
+    // Colocamos como public porque nome é uma constante.
+    // Não é possível atribuir um let como private(set)
     public let nome: String
     private(set) var email: String
 
