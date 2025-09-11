@@ -1,5 +1,5 @@
 class Aula {
-    private let nome: String
+    internal let nome: String
     private var instrutor: Instrutor
 
     init(nome: String, instrutor: Instrutor){

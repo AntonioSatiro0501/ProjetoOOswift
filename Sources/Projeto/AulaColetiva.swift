@@ -18,9 +18,11 @@ class AulaColetiva: Aula {
 
     func inscrever(aluno: Aluno) -> Bool {
         if(alunosInscritos.count < capacidadeMaxima && alunosInscritos[aluno.getMatricula()] ==  nil){
+            print("Aluno inscrito com sucesso")
             alunosInscritos[aluno.getMatricula()] = aluno
             return true
         }
+        print("ERRO! Aluno \(aluno.nome) não foi inscrito.")
         return false
     }
 
