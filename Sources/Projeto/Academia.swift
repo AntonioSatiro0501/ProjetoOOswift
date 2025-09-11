@@ -14,8 +14,12 @@ class Academia {
         self.aulasDisponiveis = aulasDisponiveis
     }
 
-    public func adicionarAparelho(_ aula: Aula){
+    public func adicionarAula(_ aula: Aula){
         aulasDisponiveis.append(aula)
+    }
+
+    public func adicionarAparelho(_ aparelho: Aparelho){
+        aparelhos.append(aparelho)
     }
 
     public func contratarInstrutor(_ instrutor: Instrutor){
@@ -30,7 +34,7 @@ class Academia {
 
     public func matricularAluno(_ aluno: Aluno){
         let matricula = aluno.getMatricula()
-        if(alunosMatriculados[matricula] != nil){
+        if(alunosMatriculados[matricula] == nil){
             alunosMatriculados[matricula] = aluno
             print("Aluno adicionado com sucesso!")
         } else {
