@@ -9,8 +9,8 @@ class AulaColetiva: Aula {
 
     init(nome: String, instrutor: Instrutor, capacidadeMaxima: Int){
         if(capacidadeMaxima > 0){
-        self.capacidadeMaxima = capacidadeMaxima
-        }else{
+            self.capacidadeMaxima = capacidadeMaxima
+        } else {
             self.capacidadeMaxima = 25
         }
         super.init(nome: nome, instrutor: instrutor)
@@ -18,11 +18,11 @@ class AulaColetiva: Aula {
 
     func inscrever(aluno: Aluno) -> Bool {
         if(alunosInscritos.count < capacidadeMaxima && alunosInscritos[aluno.getMatricula()] ==  nil){
-            print("Aluno inscrito com sucesso")
+            print("Aluno \(aluno.nome) inscrito com sucesso em \(self.nome)")
             alunosInscritos[aluno.getMatricula()] = aluno
             return true
         }
-        print("ERRO! Aluno \(aluno.nome) não foi inscrito.")
+        print("ERRO: aluno \(aluno.nome) não foi inscrito!")
         return false
     }
 

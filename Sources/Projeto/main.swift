@@ -10,9 +10,11 @@ let instrutor2: Instrutor = Instrutor(nome: "Bruno Wagner", email: "wagner32412@
 
 academia.contratarInstrutor(instrutor1)
 academia.contratarInstrutor(instrutor2)
+print()
 
 let aluno1 = academia.matricularAluno(nome: "Rubens Tanaka", email: "tanaka523@gmail.com", matricula: "1234", plano: planomensal)
 let aluno2 = academia.matricularAluno(nome: "Lidia Riquelme", email: "lidgia453@hotmail.com", matricula: "1433", plano: planoanual)
+print()
 
 let aula1: AulaPersonal = AulaPersonal(nome: "Peito", instrutor: instrutor1, aluno: aluno1)
 let aula2: AulaColetiva = AulaColetiva(nome: "Zumba", instrutor: instrutor2, capacidadeMaxima: 3)
@@ -20,6 +22,7 @@ let aula2: AulaColetiva = AulaColetiva(nome: "Zumba", instrutor: instrutor2, cap
 academia.adicionarAula(aula1)
 academia.adicionarAula(aula2)
 
+print("Adicionando alunos à aula coletiva")
 aula2.inscrever(aluno: aluno1)
 aula2.inscrever(aluno: aluno2)
 
@@ -28,22 +31,22 @@ let aluno4: Aluno = academia.matricularAluno(nome: "Fernando Miguel", email: "fe
 
 aula2.inscrever(aluno: aluno3)
 aula2.inscrever(aluno: aluno4)
+print()
 
 academia.listarAlunos()
+print()
 academia.listarAulas()
-
-var aulasLista: [Aula] = [] 
-aulasLista.append(aula1)
-aulasLista.append(aula2)
-
+print("\n")
+var aulasLista: [Aula] = [aula1, aula2] 
 for teste in aulasLista{
-    print(teste.getDescricao())
+    print(teste.getDescricao(),"\n")
 }
 
-var pessoasLista: [Pessoa] = []
-pessoasLista.append(instrutor1)
-pessoasLista.append(aluno1)
-
+var pessoasLista: [Pessoa] = [aluno1, aluno2, instrutor1, instrutor2]
 for teste in pessoasLista{
     print(teste.getDescricao())
 }
+print("--------------Relatório--------------")
+let relatorio = Academia.gerarRelatorio(academia)
+print("Total de alunos: \(relatorio().0)\nTotal de instrutores: \(relatorio().1)\nTotal de aulas: \(relatorio().2)")
+print("-------------------------------------")

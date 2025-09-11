@@ -53,27 +53,24 @@ class Academia {
         return alunosMatriculados[matricula]
     }
 
-    public func listarAlunos() {
+ public func listarAlunos() {
         if(alunosMatriculados.count == 0){
             print("Nenhum aluno matriculado.")
             return
         }
 
-        print("--- Lista de Alunos Matriculados ---")
-        // Dá certo isso daqui??
-        for aluno in alunosMatriculados.values.sorted(by: { (a1: Aluno, a2: Aluno) -> Bool in a1.nome > a2.nome} ){
+        print("----- Lista de Alunos Matriculados -----")
+        for aluno in alunosMatriculados.values.sorted(by: { (a1: Aluno, a2: Aluno) -> Bool in a1.nome > a2.nome }) {
             print(aluno.getDescricao())
         }
-        print("------------------------------------")
+        print("---------------------------------------\n")
     }
 
-    public func listarAulas(){
-
-        print("--- Lista de Aulas Disponíveis ---")
+   public func listarAulas(){
+        print("----- Lista de Aulas Disponíveis ------")
         for aula in aulasDisponiveis {
-
-            print("\n\n\(aula.getDescricao())")
+            print("\(aula.getDescricao())\n")
         }
-        print("-------------------------------------")
+        print("---------------------------------------\n")
     }
 }
