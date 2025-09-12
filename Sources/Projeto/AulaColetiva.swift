@@ -16,13 +16,11 @@ class AulaColetiva: Aula {
         super.init(nome: nome, instrutor: instrutor)
     }
 
-    func inscrever(aluno: Aluno) -> Bool {
+    func inscrever(aluno: Aluno) -> Bool{
         if(alunosInscritos.count < capacidadeMaxima && alunosInscritos[aluno.getMatricula()] ==  nil){
-            print("Aluno \(aluno.nome) inscrito com sucesso em \(self.nome)")
             alunosInscritos[aluno.getMatricula()] = aluno
             return true
         }
-        print("ERRO: aluno \(aluno.nome) não foi inscrito!")
         return false
     }
 

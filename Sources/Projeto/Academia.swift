@@ -24,7 +24,7 @@ class Academia {
 
     public func contratarInstrutor(_ instrutor: Instrutor){
         let email = instrutor.email
-        if(instrutoresContratados[email] != nil){
+        if(instrutoresContratados[email] == nil){
             instrutoresContratados[instrutor.email] = instrutor
             print("Instrutor contratado com sucesso")
         } else {
@@ -36,7 +36,7 @@ class Academia {
         let matricula = aluno.getMatricula()
         if(alunosMatriculados[matricula] == nil){
             alunosMatriculados[matricula] = aluno
-            print("Aluno adicionado com sucesso!")
+            print("Aluno \(aluno.nome) adicionado com sucesso!")
         } else {
             // Poderíamos lançar uma exceção aqui!
             print("Erro: Aluno com matrícula \(matricula) já existe.")
@@ -60,7 +60,7 @@ class Academia {
         }
 
         print("----- Lista de Alunos Matriculados -----")
-        for aluno in alunosMatriculados.values.sorted(by: { (a1: Aluno, a2: Aluno) -> Bool in a1.nome > a2.nome }) {
+        for aluno in alunosMatriculados.values.sorted(by: { (a1: Aluno, a2: Aluno) -> Bool in a1.nome < a2.nome }) {
             print(aluno.getDescricao())
         }
         print("---------------------------------------\n")

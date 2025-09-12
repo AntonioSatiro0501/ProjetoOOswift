@@ -3,8 +3,9 @@ class Aparelho: Manutencao{
      internal var dataUltimaManutencao: String
      
      func realizarManutencao() -> Bool{
-         print("Realizando manutenção do aparelho \(nomeItem)!")
-         return true
+        print("Realizando manutenção do aparelho \(nomeItem)!")
+        dataUltimaManutencao = "30/08/2015"
+        return true
      }
      init(nomeItem: String){
         self.nomeItem = nomeItem

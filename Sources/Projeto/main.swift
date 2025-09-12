@@ -12,8 +12,8 @@ academia.contratarInstrutor(instrutor1)
 academia.contratarInstrutor(instrutor2)
 print()
 
-let aluno1 = academia.matricularAluno(nome: "Rubens Tanaka", email: "tanaka523@gmail.com", matricula: "1234", plano: planomensal)
-let aluno2 = academia.matricularAluno(nome: "Lidia Riquelme", email: "lidgia453@hotmail.com", matricula: "1433", plano: planoanual)
+let aluno1 = academia.matricularAluno(nome: "Bubens Tanaka", email: "tanaka523@gmail.com", matricula: "1234", plano: planomensal)
+let aluno2 = academia.matricularAluno(nome: "Aidia Riquelme", email: "lidgia453@hotmail.com", matricula: "1433", plano: planoanual)
 print()
 
 let aula1: AulaPersonal = AulaPersonal(nome: "Peito", instrutor: instrutor1, aluno: aluno1)
@@ -23,14 +23,34 @@ academia.adicionarAula(aula1)
 academia.adicionarAula(aula2)
 
 print("Adicionando alunos à aula coletiva")
-aula2.inscrever(aluno: aluno1)
-aula2.inscrever(aluno: aluno2)
 
-let aluno3: Aluno = academia.matricularAluno(nome: "Rose Magalhães", email: "rose9545@yahoo.com.br", matricula: "3134", plano: planomensal)
-let aluno4: Aluno = academia.matricularAluno(nome: "Fernando Miguel", email: "fefe431@outlook.com.br", matricula: "6243", plano: planoanual)
+let aluno3: Aluno = academia.matricularAluno(nome: "Dose Magalhães", email: "rose9545@yahoo.com.br", matricula: "3134", plano: planomensal)
+let aluno4: Aluno = academia.matricularAluno(nome: "Cernando Miguel", email: "fefe431@outlook.com.br", matricula: "6243", plano: planoanual)
 
-aula2.inscrever(aluno: aluno3)
-aula2.inscrever(aluno: aluno4)
+if(aula2.inscrever(aluno: aluno1)){
+    print("Aluno \(aluno1.nome) inscrito com sucesso em \(aluno1.nome)")
+} else {
+    print("ERRO: aluno \(aluno1.nome) não foi inscrito!")
+}
+
+if(aula2.inscrever(aluno: aluno2)){
+    print("Aluno \(aluno2.nome) inscrito com sucesso em \(aluno2.nome)")
+} else {
+    print("ERRO: aluno \(aluno2.nome) não foi inscrito!")
+}
+
+if(aula2.inscrever(aluno: aluno3)){
+    print("Aluno \(aluno1.nome) inscrito com sucesso em \(aluno3.nome)")
+} else {
+    print("ERRO: aluno \(aluno3.nome) não foi inscrito!")
+}
+
+if(aula2.inscrever(aluno: aluno4)){
+    print("Aluno \(aluno4.nome) inscrito com sucesso em \(aluno4.nome)")
+} else {
+    print("ERRO: aluno \(aluno4.nome) não foi inscrito!")
+}
+
 print()
 
 academia.listarAlunos()
